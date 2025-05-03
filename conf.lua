@@ -1,9 +1,4 @@
 function love.conf(t)
-    -- misc config
-    t.audio.mic = false
-    t.version = "11.5"
-    t.console = true
-    t.gammacorrect = false
 
     -- window config
     t.window.title = "Neon Skies"
@@ -45,4 +40,10 @@ function love.conf(t)
     t.modules.touch = true
     t.modules.video = true
     t.modules.window = true
+
+    -- misc config
+    t.audio.mic = false
+    t.version = "11.5"
+    t.console = true
+    t.gammacorrect = false
 end

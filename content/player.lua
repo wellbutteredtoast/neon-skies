@@ -3,8 +3,13 @@ Player.__index = Player
 
 function Player.new(x, y)
     local self = setmetatable({}, Player)
-    -- i'll come back to this in a bit
-    self.assetPath = ""
+    
+    self.assetPath = assetPath or ""
+    if self.assetPath ~= "" then
+        self.sprite = love.graphics.newImage(self.assetPath)
+    else
+        self.sprite = nil
+    end
 
     -- player position / movement speed
     self.x = x or 0
@@ -52,8 +57,13 @@ end
 
 
 function Player:draw()
-    love.graphics.setColor(1, 1, 1) -- white
-    love.graphics.rectangle("fill", self.x, self.y, 32, 32)
+    -- default white colour incase of no assetPath
+    love.graphics.setColor(1, 1, 1)
+    if self.sprite then
+        love.graphics.draw(self.sprite, self.x, self.y)
+    else
+        love.graphics.rectangle("fill", self.x, self.y, 32, 32)
+    end
 end
 
 return Player
