@@ -15,4 +15,4 @@ It's a quiet and gray Saturday morning for me, I figured I would take about an h
 
 The shaders appear to not work without assets, since I still haven't done art, I'll have to come back to this later on. I did learn that the shaders are written in `OpenGL ES 1.0` shader language, which is helpful. I also learned that some shaders can be quite complex, so for th time being I'll just avoid shadering stuff.
 
-I got something to render on the player, progress! So now I'll need to start making proper art once I'm started in uni. Until then I'm gonna start working on a basic NPC like system, complete with pathing and everything!
+I got something to render on the player, progress! So now I'll need to start making proper art once I'm started in uni. Until then I'm gonna start working on a basic NPC like system, complete with pathing and everything! ...A couple hours later, the NPC system base is a lot more functional as of now. We have NPCs that stand, walk, and chase. Right now it's good! Well, I broke it, I'll fix it tonight!

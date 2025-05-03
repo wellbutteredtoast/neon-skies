@@ -19,3 +19,4 @@
 - Created npc.lua
 - Started work on pathToPlayerPerfect
 - Started work on pathToPlayerVariance
+- Added test NPCs to main.lua (broken)
