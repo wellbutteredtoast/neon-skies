@@ -1,1 +1,1 @@
-<!-- this has changelogs from all release made both to GitHub and later on, Steam-->
+<!-- this has changelogs from all releases made both to GitHub and later on, Steam-->
