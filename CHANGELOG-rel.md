@@ -1,1 +1,0 @@
-<!-- this has changelogs from all releases made both to GitHub and later on, Steam-->

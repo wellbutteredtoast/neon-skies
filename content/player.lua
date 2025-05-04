@@ -53,6 +53,17 @@ function Player:update(dt)
 
     self.x = self.x + moveX * self.speed * speedMul * dt
     self.y = self.y + moveY * self.speed * speedMul * dt
+
+    -- clamping > endless comparisons
+    local maxWidth, maxHeight = love.graphics.getDimensions()
+    local spriteSize = 32
+
+    self.x = math.max(0, math.min(self.x, maxWidth - spriteSize))
+    self.y = math.max(0, math.min(self.y, maxHeight - spriteSize))
+
+    local px = string.format("%1.0f", math.abs(self.x))
+    local py = string.format("%1.0f", math.abs(self.y))
+    print("px: " .. px .. " py: " .. py)
 end
 
 function Player:draw()

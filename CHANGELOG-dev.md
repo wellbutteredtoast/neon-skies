@@ -31,3 +31,6 @@
 - Slightly increased player movement speed
 - Expanded the readme.md
 - Converted `:pathToPlayerPerfect` and `:pathToPlayerVariance` into `local` functions
+- Implemented bounds detection to keep players in the game window
+- Removed NPC tests from main.lua
+- Removed CHANGELOG-rel.md
