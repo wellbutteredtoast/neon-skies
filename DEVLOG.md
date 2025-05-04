@@ -16,3 +16,11 @@ It's a quiet and gray Saturday morning for me, I figured I would take about an h
 The shaders appear to not work without assets, since I still haven't done art, I'll have to come back to this later on. I did learn that the shaders are written in `OpenGL ES 1.0` shader language, which is helpful. I also learned that some shaders can be quite complex, so for th time being I'll just avoid shadering stuff.
 
 I got something to render on the player, progress! So now I'll need to start making proper art once I'm started in uni. Until then I'm gonna start working on a basic NPC like system, complete with pathing and everything! ...A couple hours later, the NPC system base is a lot more functional as of now. We have NPCs that stand, walk, and chase. Right now it's good! Well, I broke it, I'll fix it tonight!
+
+### 4 May, 2025
+
+It's early in the morning (about 10:30AM) and some good progress has been made. I fixed the NPCs after patching some **major** issues with `Nonplayer:pathToPlayerPerfect` and `Nonplayer:pathToPlayerVariance`, mostly math related. The update loop was also fixed, as I was trying to compare a string to a boolean, and guess what, that doesn't work. (gasp!) Some small changes to the player to made, but not large enough to make a proper note of it.
+
+I also expanded the readme to give an overview of the world the game takes place in. I will *not* be adding things like build instructions as [The Love2D Wiki](https://love2d.org/wiki) provides good instructions for taking a project like this and building it into a binary.
+
+I learned that you can't make a function `local` if it's a `:` method, which kinda sucks because I built the pathing functions to be that way. Well, that should be fine for the next few days as I build out a collision system and using `Tiled` data to make a map, which'll be extremely helpful for me. For now, collision is just a concept, nonexistent. I fixed the path functions anyways, even if they're only gonna exist for another few days.

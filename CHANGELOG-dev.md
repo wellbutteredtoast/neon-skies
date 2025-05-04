@@ -20,3 +20,14 @@
 - Started work on pathToPlayerPerfect
 - Started work on pathToPlayerVariance
 - Added test NPCs to main.lua (broken)
+
+## May 4, 2025
+
+- Fixed major bugs in npc.lua
+- Small update to `pathToPlayerPerfect`
+- Tweaked main.lua for added NPC testing
+- Added a `speed` variable to NPCs
+- Validated `chasep`, `chasev`, and `static` path methods
+- Slightly increased player movement speed
+- Expanded the readme.md
+- Converted `:pathToPlayerPerfect` and `:pathToPlayerVariance` into `local` functions

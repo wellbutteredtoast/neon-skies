@@ -3,7 +3,7 @@ Nonplayer.__index = Nonplayer
 math.randomseed(os.time())
 
 -- !! NOTE: these pathfinding algs only work in *empty* regions, they will
---          be scrapped as soon as collidable objects can be rendered
+-- !!       be scrapped as soon as collidable objects can be rendered
 
 local allowedTypes = {
     static = true,       -- unmoving
@@ -12,8 +12,8 @@ local allowedTypes = {
     chasev = true,       -- chasing with variance
 }
 
-function Nonplayer.new(x, y, type)
-    local self setmetatable({}, Nonplayer)
+function Nonplayer.new(x, y, type, speed)
+    local self = setmetatable({}, Nonplayer)
 
     self.assetPath = assetPath or ""
     if self.assetPath ~= "" then
@@ -24,7 +24,7 @@ function Nonplayer.new(x, y, type)
 
     self.x = x or 0
     self.y = y or 0
-    self.speed = 100
+    self.speed = speed or 100
     self.alive = true
 
     self.type = type or "static"
@@ -33,9 +33,10 @@ function Nonplayer.new(x, y, type)
 end
 
 -- playerpos is assumed to be a table with just x/y positions in them
-function Nonplayer:pathToPlayerPerfect(playerPos)
+local function pathToPlayerPerfect(self, playerPos)
     local dx = playerPos.x - self.x
     local dy = playerPos.y - self.y
+    local distance = math.sqrt(dx * dx + dy * dy)
 
     if distance > 0 then
         local nx = dx / distance
@@ -47,7 +48,7 @@ end
 
 -- playerpos is assumed to be a table with just x/y positions in them
 -- variance is a float from 0.0->1.0 -- 0.0 ~ perfect, 1.0 ~ impossibly bad
-function Nonplayer:pathToPlayerVariance(playerPos, variance)
+local function pathToPlayerVariance(self, playerPos, variance)
     local dx = playerPos.x - self.x
     local dy = playerPos.y - self.y
     local distance = math.sqrt(dx * dx + dy * dy)
@@ -79,11 +80,11 @@ function Nonplayer:update(dt, plrPos)
         self.x, self.y = self.x, self.y
         return
     end
-    if allowedTypes[self.type] == "chasev" then
-        Nonplayer:pathToPlayerVariance(plrPos, math.random())
+    if self.type == "chasev" then
+        pathToPlayerVariance(self, plrPos, math.random())
     end
-    if allowedTypes[self.type] == "chasep" then
-        Nonplayer:pathToPlayerPerfect(plrPos)
+    if self.type == "chasep" then
+        pathToPlayerPerfect(self, plrPos)
     end
 end
 
@@ -96,3 +97,5 @@ function Nonplayer:draw()
         love.graphics.rectangle("fill", self.x, self.y, 32, 32)
     end
 end
+
+return Nonplayer
