@@ -3,27 +3,27 @@
 ## May 2, 2025
 
 - Created Project
-- Created main.lua
-- Created conf.lua
-- Created changelog-dev.md
-- Created changelog-rel.md
-- Created devlog.md
-- Completed conf.lua
+- Created `main.lua`
+- Created `conf.lua`
+- Created `changelog-dev.md`
+- Created `changelog-rel.md`
+- Created `devlog.md`
+- Completed `conf.lua`
 
 ## May 3, 2025
 
-- Worked on player.lua
-- Slight format change to conf.lua
+- Worked on `player.lua`
+- Slight format change to `conf.lua`
 - Created `gamedata`, all assets beyond Lua scripts will go here
-- Added proper asset rendering to player.lua
-- Created npc.lua
+- Added proper asset rendering to `player.lua`
+- Created `npc.lua`
 - Started work on pathToPlayerPerfect
 - Started work on pathToPlayerVariance
-- Added test NPCs to main.lua (broken)
+- Added test NPCs to `main.lua` (broken)
 
 ## May 4, 2025
 
-- Fixed major bugs in npc.lua
+- Fixed major bugs `in npc.lua`
 - Small update to `pathToPlayerPerfect`
 - Tweaked main.lua for added NPC testing
 - Added a `speed` variable to NPCs
@@ -32,5 +32,11 @@
 - Expanded the readme.md
 - Converted `:pathToPlayerPerfect` and `:pathToPlayerVariance` into `local` functions
 - Implemented bounds detection to keep players in the game window
-- Removed NPC tests from main.lua
-- Removed CHANGELOG-rel.md
+- Removed NPC tests from `main.lua`
+- Removed `CHANGELOG-rel.md`
+
+## May 5, 2025
+
+- Added custom colours to NPC default rectangles
+- Removed stat system stub from `player.lua`
+- Added `utility.lua` for misc global functions

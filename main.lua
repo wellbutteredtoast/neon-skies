@@ -16,5 +16,9 @@ end
 
 function love.draw()
     player:draw()
-    love.graphics.print("Neon Skies - 0.0.1d", 0, 0)
+    mc:draw()
+
+    -- reset colours b/c text rendering
+    love.graphics.setColor(1.0, 1.0, 1.0)
+    love.graphics.print("Neon Skies - 0.0.5d", 0, 0)
 end

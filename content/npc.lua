@@ -12,7 +12,7 @@ local allowedTypes = {
     chasev = true,       -- chasing with variance
 }
 
-function Nonplayer.new(x, y, type, speed)
+function Nonplayer.new(x, y, type, speed, colr, colg, colb)
     local self = setmetatable({}, Nonplayer)
 
     self.assetPath = assetPath or ""
@@ -28,6 +28,10 @@ function Nonplayer.new(x, y, type, speed)
     self.alive = true
 
     self.type = type or "static"
+
+    self.r = colr or 1
+    self.g = colg or 1
+    self.b = colb or 1
 
     return self
 end
@@ -89,8 +93,8 @@ function Nonplayer:update(dt, plrPos)
 end
 
 -- pretty much directly taken from the player, but it works and that's what matters
-function Nonplayer:draw()
-    love.graphics.setColor(0, 1, 0)
+function Nonplayer:draw(r, g, b)
+    love.graphics.setColor(self.r, self.g, self.b)
     if self.sprite then
         love.graphics.draw(self.sprite, self.x, self.y)
     else

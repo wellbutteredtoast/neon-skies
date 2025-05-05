@@ -1,6 +1,8 @@
 local Player = {}
 Player.__index = Player
 
+local util = require("utility")
+
 function Player.new(x, y, assetPath)
     local self = setmetatable({}, Player)
     
@@ -15,10 +17,6 @@ function Player.new(x, y, assetPath)
     self.x = x or 0
     self.y = y or 0
     self.speed = 133
-
-    -- stat system stub
-    self.hpCurrent = 100
-    self.hpMax = 100
 
     -- currencies
     self.account = {

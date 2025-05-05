@@ -24,3 +24,9 @@ It's early in the morning (about 10:30AM) and some good progress has been made. 
 I also expanded the readme to give an overview of the world the game takes place in. I will *not* be adding things like build instructions as [The Love2D Wiki](https://love2d.org/wiki) provides good instructions for taking a project like this and building it into a binary.
 
 I learned that you can't make a function `local` if it's a `:` method, which kinda sucks because I built the pathing functions to be that way. Well, that should be fine for the next few days as I build out a collision system and using `Tiled` data to make a map, which'll be extremely helpful for me. For now, collision is just a concept, nonexistent. I fixed the path functions anyways, even if they're only gonna exist for another few days.
+
+### 5 May, 2025
+
+Today was the first day of lectures, so I didn't do a whole lot for the morning and some of the afternoon, but by the evening, things were moving smoothly. I added custom colours to the NPCs by just adding `r, g, b` values in the table. My current implementation is a little simple and can be improved upon later.
+
+I'm currently thinking of how I plan on implementing collisions between the player and NPCs, it'll be a bit complex but I can handle it, I've stuffed some collision code into a `utility.lua` for the time being.
