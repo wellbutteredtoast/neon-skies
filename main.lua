@@ -16,7 +16,6 @@ end
 
 function love.draw()
     player:draw()
-    mc:draw()
 
     -- reset colours b/c text rendering
     love.graphics.setColor(1.0, 1.0, 1.0)

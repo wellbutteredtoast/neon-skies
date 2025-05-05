@@ -26,9 +26,7 @@ function Nonplayer.new(x, y, type, speed, colr, colg, colb)
     self.y = y or 0
     self.speed = speed or 100
     self.alive = true
-
     self.type = type or "static"
-
     self.r = colr or 1
     self.g = colg or 1
     self.b = colb or 1
