@@ -1,8 +1,6 @@
 local Player = {}
 Player.__index = Player
 
-local util = require("utility")
-
 function Player.new(x, y, assetPath)
     local self = setmetatable({}, Player)
     
@@ -58,10 +56,6 @@ function Player:update(dt)
 
     self.x = math.max(0, math.min(self.x, maxWidth - spriteSize))
     self.y = math.max(0, math.min(self.y, maxHeight - spriteSize))
-
-    local px = string.format("%1.0f", math.abs(self.x))
-    local py = string.format("%1.0f", math.abs(self.y))
-    print("px: " .. px .. " py: " .. py)
 end
 
 function Player:draw()
