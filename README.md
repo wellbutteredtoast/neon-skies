@@ -2,6 +2,10 @@
 
 A Lua made ARPG all about being yourself in a neo-future dystopian world. Climb your way to the top of the top and topple the broken systems of power. You have many paths you can take here to get to the top, all of which can be explored and experimented with.
 
+## Dependencies
+
+> **json.lua** -- a single file JSON solution for Lua written by rxi.
+
 ## Genres and Target Audience
 
 - Adventure

@@ -47,3 +47,9 @@
 - Created `modLoader.lua`
 - Added rxi's `json.lua` as a dependency
 - Added mod loading in `love.load()` step of `main.lua`
+
+## May 7, 2025
+
+- Re-wrote `npc.lua`
+- Implemented `npcManager.lua` to centralize all NPCs
+- Created a simple JSON structure and decoding step for NPCs

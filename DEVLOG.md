@@ -42,3 +42,7 @@ All of this will be explained hopefully in better detail when the first video up
 Note: **I am aware of how insecure the current `modLoader.lua` currently is. This'll be addressed ASAP.**
 
 Well that was not very eventful, I'll try do some more work tomorrow after my lectures.
+
+### 7 May, 2025
+
+12:05am for me, doing a small little thing before I go to bed, wake up, then go sliding into my lectures. 10 minutes later and I've re-written the NPC system to make it borderline drag-and-drop. Now an entire blank NPC can be slipped into the game via a single JSON file. For now, it's basic, but I will be extending this far and wide. The original `npc.lua` implementation will of course still be found in past commits, but for now this system is a lot better, at least in my opinion.
