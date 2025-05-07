@@ -41,8 +41,9 @@
 - Removed stat system stub from `player.lua`
 - Added `utility.lua` for misc global functions
 
-# May 6, 2025
+## May 6, 2025
 
 - Created `logSys.lua`
 - Created `modLoader.lua`
 - Added rxi's `json.lua` as a dependency
+- Added mod loading in `love.load()` step of `main.lua`

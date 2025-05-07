@@ -40,3 +40,5 @@ All of this will be explained hopefully in better detail when the first video up
 **Big** day ahead, after some morning things, like taking notes for my online classes and tidying things up, finally sitting down to code. And today I finally start the first re-write of large portions of game code. Right now, I only have a couple hours so I'll be re-writing the player as it is top priority, I will focus on the NPCs afterwards. This re-write has put safety and readability in mind as well as modularity to a hilarious extent. By the end of this, a single mod could theoretically replace entire systems and the game would just chug along (within the sandboxed allowances of the game itself) This will need more work than I realized initally. So at this specific commit, do not be surprised with the hilariously large amount of changes happening in the repository.
 
 Note: **I am aware of how insecure the current `modLoader.lua` currently is. This'll be addressed ASAP.**
+
+Well that was not very eventful, I'll try do some more work tomorrow after my lectures.
