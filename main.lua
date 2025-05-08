@@ -39,6 +39,8 @@ function love.load()
         end
     end
 
+    log.info("Sucessfully loaded mods.")
+
     -- loading NPCs into the fray at last
     npcManager:loadAll("gamedata/npc")
 end
@@ -58,5 +60,5 @@ function love.draw()
 
     -- reset colours b/c text rendering
     love.graphics.setColor(1.0, 1.0, 1.0)
-    love.graphics.print("Neon Skies - 0.0.9d", 0, 0)
+    love.graphics.print("Neon Skies - 0.0.13d", 0, 0)
 end

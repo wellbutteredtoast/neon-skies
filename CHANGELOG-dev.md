@@ -56,3 +56,8 @@
 - Added a log step in `npc.lua`
 - Implemented NPC/Player collisions
 - Gave the player a `width` and `height` attribute (fixing `checkCollision()`)
+
+## May 8, 2025
+
+- Removed log step from `npc.lua`
+- Added boundary checking to NPCs

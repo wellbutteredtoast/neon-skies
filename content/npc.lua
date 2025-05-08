@@ -37,8 +37,6 @@ function Nonplayer.new(data)
     else
         self.sprite = nil
     end
-
-    log.info("Successfully loaded NPC: " .. data.name)
     return self
 end
 
@@ -105,6 +103,13 @@ function Nonplayer:update(dt, playerPos)
             wanderRandom(self)
         end
     end
+
+    -- last-minute bounds detection addition!
+    local mWidth, mHeight = love.graphics.getDimensions()
+    local sprSize = 32
+
+    self.x = math.max(0, math.min(self.x, mWidth - sprSize))
+    self.y = math.max(0, math.min(self.y, mHeight - sprSize))
 
     self.isColliding = false
 end

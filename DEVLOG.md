@@ -79,3 +79,9 @@ end
 ```
 
 And that's the function, it front-loads collision, before even checking the NPC type check, which can probably be removed by now, but that's for the me of tomorrow to find out. That's all for today, I'm gonna go get some well deserved sleep.
+
+## 8 May, 2025
+
+Today is the last NPC centric day of updates. Right now I'm gonna start work on one of the largest systems, items. It'll start basic, then expand as I need it to. I don't *want* to make items overly complex, it does feel inevitable. I'll try to avoid this where I can.
+
+Good morning world, the game segfaults randomly on boot now. Not good, not at all. How? I'm unsure. Working on a fix.
