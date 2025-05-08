@@ -85,3 +85,5 @@ And that's the function, it front-loads collision, before even checking the NPC 
 Today is the last NPC centric day of updates. Right now I'm gonna start work on one of the largest systems, items. It'll start basic, then expand as I need it to. I don't *want* to make items overly complex, it does feel inevitable. I'll try to avoid this where I can.
 
 Good morning world, the game segfaults randomly on boot now. Not good, not at all. How? I'm unsure. Working on a fix.
+
+The fix worked and it only took like 40 minutes! That's a huge relief, now I can finally put some proper work into new systems.

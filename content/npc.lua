@@ -27,13 +27,25 @@ function Nonplayer.new(data)
     self.g = (data.colour_g or 255) / 255
     self.b = (data.colour_b or 255) / 255
     self.assetPath = data.assetPath or ""
+    self.sprite = ""
     self.alive = true
     self.width = 32
     self.height = 32
     self.isColliding = true
 
     if self.assetPath ~= "" then
-        self.sprite = love.graphics.newImage(self.assetPath)
+        if love.filesystem.getInfo(self.assetPath, "file") then
+            local ok, img = pcall(love.graphics.newImage, self.assetPath)
+            if ok then 
+                self.sprite = img
+            else
+                log.error("Failed to load sprite " .. self.assetPath)
+                self.sprite = nil
+            end
+        else
+            log.warn("Asset not found: " .. self.assetPath)
+            self.sprite = nil
+        end
     else
         self.sprite = nil
     end

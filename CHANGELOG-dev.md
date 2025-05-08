@@ -61,3 +61,6 @@
 
 - Removed log step from `npc.lua`
 - Added boundary checking to NPCs
+- Large bugfixes to `npcManager:loadAll()`
+- Added better filechecking in `npc.new()`
+- Improved no asset fallback in `npc.lua`
