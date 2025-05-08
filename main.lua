@@ -62,5 +62,5 @@ function love.draw()
 
     -- reset colours b/c text rendering
     love.graphics.setColor(1.0, 1.0, 1.0)
-    love.graphics.print("Neon Skies - 0.1.3d", 0, 0)
+    love.graphics.print("Neon Skies - 0.1.4d", 0, 0)
 end

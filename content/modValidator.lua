@@ -15,7 +15,7 @@ local badFunctions = {
     "require%(%s*['\"]socket['\"]%)",
     "debug%.",
     "package%.loadlib",
-    "loadstring",
+    "%f[%a_]loadstring%f[^%a_]",
     "load%s*%(",
     "setfenv",
     "getfenv",
