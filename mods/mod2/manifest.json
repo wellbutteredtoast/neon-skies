@@ -1,0 +1,8 @@
+{
+    "mod_id": "harmless_m2odtest",
+    "name": "Another Mod",
+    "desc": "This mod is not cool and not good probably.",
+    "version": "1.8.3",
+    "api_ver": 100,
+    "entrypoint": "entrypoint.lua"
+}

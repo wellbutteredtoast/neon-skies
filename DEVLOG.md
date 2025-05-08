@@ -53,6 +53,8 @@ I accidentally broke everything by attempting to add NPC collisions with the pla
 
 It was not a quick fix, it's almost midnight and I realized that putting per-instance code in the manager was probably a bad idea, I shipped the code into the `npc.lua` script and it works completely fine.
 
+<!-- function of :update() as of commit 4e22f1c
+(May 7th, 2025 @ 11:50pm GMT-2:30) -->
 ```lua
 function Nonplayer:update(dt, playerPos)
 
@@ -88,4 +90,6 @@ Good morning world, the game segfaults randomly on boot now. Not good, not at al
 
 The fix worked and it only took like 40 minutes! That's a huge relief, now I can finally put some proper work into new systems.
 
-And the first system of the day is a validator for mods. It checks for bad function calls and general shenanigans, the usual things and suspects. It'll be worked on and expanded as the game expands as well.
+And the first system of the day is a validator for mods. It checks for bad function calls and general shenanigans, the usual things and suspects. It'll be worked on and expanded as the game expands as well. Now that this mess is concluded and safely contained, I'm finally gonna start working on *items!* I suspect this'll take a little bit to get right, since I now need to create some added subsystems like an inventory, and an inventory manager for merchants, loot chests, and other places where one can gain items. Adding a GUI-based inventory is not my top priority, making a functional one is. Once I know the functions like `addItem()`, `popItem()`, `queryInventory()`, `checkRemainingSpace()`, etc.. are all functional, then a GUI system will be built on top of everything.
+
+The amount of files in `content` is growing fairly well, I may do some sorting later to compartmentalize™ the game code for better readability at the end of the day. But for now, I plan on just implementing what I need to before the great organization begins.

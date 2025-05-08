@@ -4,6 +4,7 @@
 -- stopped in some capacity.
 
 local modValidator = {}
+local log = require("logSys")
 
 local badFunctions = {
     "os.execute",
@@ -24,7 +25,7 @@ local badFunctions = {
     "loadfile",
 }
 
-function modValidator.checkForBadFuncs(script)
+function modValidator.checkForBadFuncs(script, modPath)
     local found = {}
     for _, pattern in ipairs(badFunctions) do
         if string.match(script, pattern) then
@@ -34,6 +35,7 @@ function modValidator.checkForBadFuncs(script)
     if #found > 0 then
         return false, found
     end
+    log.debug("Scripts for " .. modPath .. " are OK.")
     return true
 end
 
@@ -47,7 +49,7 @@ function modValidator.deepScanModDir(modPath)
             if love.filesystem.getInfo(fullPath, "file") and item:match("%.lua$") then
                 local content = love.filesystem.read(fullPath)
                 if content then
-                    local ok, reasons = modValidator.checkForBadFuncs(content)
+                    local ok, reasons = modValidator.checkForBadFuncs(content, modPath)
                     if not ok then
                         badFiles[fullPath] = reasons
                     end

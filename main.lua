@@ -12,6 +12,7 @@ function love.load()
     player = Player.new(70, 70, nil)
     print("\x1b[2J\x1b[0m\x1b[H")
     log.debug("Game started.")
+    log.debug("Your save/log directory: " .. love.filesystem.getSaveDirectory())
     log.info("Preparing to load mods...")
     local mods = modloader.loadAllMods("mods")
 
@@ -61,5 +62,5 @@ function love.draw()
 
     -- reset colours b/c text rendering
     love.graphics.setColor(1.0, 1.0, 1.0)
-    love.graphics.print("Neon Skies - 0.1.1d", 0, 0)
+    love.graphics.print("Neon Skies - 0.1.3d", 0, 0)
 end

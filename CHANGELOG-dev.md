@@ -67,3 +67,5 @@
 - Implemented `modValidator.lua` to check for bad acting mods
 - Re-added log steps to `npcManager.lua` and `player.lua`
 - Added a test mod; `mods/bad` to test manifest loading and script checking
+- Added a second test mod; `mods/mod2` for multimod testing
+- Changed `info()` logs to `debug()` logs in `npcManager.lua`

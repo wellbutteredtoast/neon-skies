@@ -1,4 +1,6 @@
 function love.conf(t)
+    -- identity config (for logs and save files)
+    t.identity = "NeonSkies"
 
     -- window config
     t.window.title = "Neon Skies"

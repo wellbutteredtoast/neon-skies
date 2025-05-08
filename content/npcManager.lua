@@ -40,14 +40,14 @@ function npcManager:loadAll(directory)
     for _, file in ipairs(files) do
         if file:match("%.npc$") then
             local fullpath = directory .. "/" .. file
-            log.info("Processing NPC: " .. fullpath)
+            log.debug("Processing NPC: " .. fullpath)
             local data = decodeBase64Json(fullpath)
             if data then
-                log.info("Opened sucessfully: " .. fullpath)
+                log.debug("Opened sucessfully: " .. fullpath)
                 local ok, npc = pcall(Nonplayer.new, data)
                 if ok then
                     table.insert(self.npcs, npc)
-                    log.info("NPC created: " .. file)
+                    log.debug("NPC created: " .. file)
                 else
                     log.error("NPC creation failed: " .. file .. " | Error: " .. tostring(npc))
                 end

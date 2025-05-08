@@ -9,13 +9,27 @@ local colors = {
     debug = "\27[90m",  -- Gray
 }
 
-local logFileName = "logs.txt"
+local logFileName = nil
 local logFile = nil
 
+local function getTimestampForFilename()
+    return os.date("%Y-%m-%d_%H-%M-%S")
+end
+
 local function init()
-    love.filesystem.write(logFileName, "")
-    logFile = love.filesystem.newFile(logFileName, "a")
-    logFile:open("a")
+    -- Open the log file directly in append mode
+    local timestamp = getTimestampForFilename()
+    logFileName = "logs_" .. timestamp .. ".log"
+    logFile = love.filesystem.newFile(logFileName)
+    if logFile then
+        local success = logFile:open("a")
+        if not success then
+            print("[LOGGER] Failed to open log file: " .. logFileName)
+            logFile = nil
+        end
+    else
+        print("[LOGGER] Failed to create log file: " .. logFileName)
+    end
 end
 
 local function format(tag, msg)
