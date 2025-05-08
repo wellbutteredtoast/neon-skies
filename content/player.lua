@@ -1,6 +1,8 @@
 local Player = {}
 Player.__index = Player
 
+local log = require("logSys")
+
 function Player.new(x, y, assetPath)
     local self = setmetatable({}, Player)
     
@@ -25,6 +27,7 @@ function Player.new(x, y, assetPath)
         metal = 0,
     }
 
+    log.debug("Player object created.")
     return self
 end
 

@@ -87,3 +87,5 @@ Today is the last NPC centric day of updates. Right now I'm gonna start work on 
 Good morning world, the game segfaults randomly on boot now. Not good, not at all. How? I'm unsure. Working on a fix.
 
 The fix worked and it only took like 40 minutes! That's a huge relief, now I can finally put some proper work into new systems.
+
+And the first system of the day is a validator for mods. It checks for bad function calls and general shenanigans, the usual things and suspects. It'll be worked on and expanded as the game expands as well.

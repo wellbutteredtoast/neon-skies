@@ -1,0 +1,12 @@
+{
+    "npc-id": "tester",                             // unique all lowercase ID
+    "name": "Asset Path Tester",                    // proper name (in game)
+    "type": "chasev",                               // movement type
+    "speed": 110,                                   // speed
+    "xpos": 100,                                    // starting xp
+    "ypos": 100,                                    // starting yp
+    "colour_r": 64,                                 // fallback colours
+    "colour_g": 0,
+    "colour_b": 64,
+    "assetPath": "./gamedata/sprites/tester.png"    // sprite path
+}

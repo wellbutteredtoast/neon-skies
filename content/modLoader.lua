@@ -1,5 +1,7 @@
 local json = require("rxiJson")
 local modLoader = {}
+local modValidator = require("modValidator")
+local log = require("logSys")
 
 local function readFile(path)
     if not love.filesystem.getInfo(path) then
@@ -34,6 +36,22 @@ function modLoader.loadMod(modPath)
 
     local valid, valErr = validateManifest(manifest)
     if not valid then return nil, valErr end
+
+    -- checks if stuff is bad, blocks if yes
+    local badFiles = modValidator.deepScanModDir(modPath)
+    if next(badFiles) ~= nil then
+        local report = {}
+        for file, reasons in pairs(badFiles) do
+            table.insert(report, file .. " -> " .. table.concat(reasons, ", "))
+        end
+        local message = "Mod '" .. manifest.name .. "' contains blocked code:\n" ..
+                        table.concat(report, "\n") ..
+                        "\n\nPlease remove or clean the mod before trying again."
+        love.window.showMessageBox("Fatal", message, "error")
+        log.error("Potentally unsafe mod found, the game will not continue.")
+        error(message)
+    end
+    
 
     manifest._modPath = modPath
     return manifest

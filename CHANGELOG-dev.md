@@ -64,3 +64,6 @@
 - Large bugfixes to `npcManager:loadAll()`
 - Added better filechecking in `npc.new()`
 - Improved no asset fallback in `npc.lua`
+- Implemented `modValidator.lua` to check for bad acting mods
+- Re-added log steps to `npcManager.lua` and `player.lua`
+- Added a test mod; `mods/bad` to test manifest loading and script checking
