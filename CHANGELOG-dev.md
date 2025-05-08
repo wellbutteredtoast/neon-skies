@@ -69,3 +69,5 @@
 - Added a test mod; `mods/bad` to test manifest loading and script checking
 - Added a second test mod; `mods/mod2` for multimod testing
 - Changed `info()` logs to `debug()` logs in `npcManager.lua`
+- Added `inventory.lua`
+- Added `inventoryManager.lua`
