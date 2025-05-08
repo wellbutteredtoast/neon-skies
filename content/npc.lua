@@ -1,6 +1,10 @@
+local util = require("utility")
+
 local Nonplayer = {}
 Nonplayer.__index = Nonplayer
 math.randomseed(os.time())
+
+local log = require("logSys")
 
 -- remember, to load an NPC from `gamedata/npc` it must be encoded in base64!
 -- plain JSON will get decoded into broken text and will not be loaded!
@@ -24,6 +28,9 @@ function Nonplayer.new(data)
     self.b = (data.colour_b or 255) / 255
     self.assetPath = data.assetPath or ""
     self.alive = true
+    self.width = 32
+    self.height = 32
+    self.isColliding = true
 
     if self.assetPath ~= "" then
         self.sprite = love.graphics.newImage(self.assetPath)
@@ -31,6 +38,7 @@ function Nonplayer.new(data)
         self.sprite = nil
     end
 
+    log.info("Successfully loaded NPC: " .. data.name)
     return self
 end
 
@@ -79,14 +87,26 @@ local function wanderRandom(self)
 end
 
 function Nonplayer:update(dt, playerPos)
-    if not allowedTypes[self.type] or self.type == "static" then return end
-    if self.type == "chasep" then
-        pathToPlayerPerfect(self, playerPos)
-    elseif self.type == "chasev" then
-        pathToPlayerVariance(self, playerPos, 0.5)
-    elseif self.type == "wander" then
-        wanderRandom(self)
+
+    if checkCollision(self, playerPos) then
+        self.isColliding = true
     end
+
+    if not allowedTypes[self.type] or self.type == "static" then return end
+    
+    if self.isColliding then
+        -- left blank intentionally, using return breaks this
+    else
+        if self.type == "chasep" then
+            pathToPlayerPerfect(self, playerPos)
+        elseif self.type == "chasev" then
+            pathToPlayerVariance(self, playerPos, 0.5)
+        elseif self.type == "wander" then
+            wanderRandom(self)
+        end
+    end
+
+    self.isColliding = false
 end
 
 function Nonplayer:draw()

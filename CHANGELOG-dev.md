@@ -53,3 +53,6 @@
 - Re-wrote `npc.lua`
 - Implemented `npcManager.lua` to centralize all NPCs
 - Created a simple JSON structure and decoding step for NPCs
+- Added a log step in `npc.lua`
+- Implemented NPC/Player collisions
+- Gave the player a `width` and `height` attribute (fixing `checkCollision()`)

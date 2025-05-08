@@ -1,9 +1,11 @@
 local Nonplayer = require("npc")
 local json = require("rxiJson")
+local log = require("logSys")
 
 local npcManager = {}
 npcManager.npcs = {}
 
+-- cannot accept plaintext JSON, will break everything
 local function decodeBase64Json(path)
     local encoded, size = love.filesystem.read(path)
     if not encoded then return nil end
@@ -21,7 +23,7 @@ function npcManager:loadAll(directory)
                 local npc = Nonplayer.new(data)
                 table.insert(self.npcs, npc)
             else
-                print("Failed to decode NPC file: " .. fullpath)
+                log.error("Failed to decode NPC file: " .. fullpath)
             end
         end
     end

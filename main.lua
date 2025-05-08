@@ -46,9 +46,10 @@ end
 function love.update(dt)
     player:update(dt)
 
-    local pp = { x = player.x, y = player.y}
+    -- required for collision detection with NPCs
+    local ppwh = { x = player.x, y = player.y, width = player.width, height = player.height}
 
-    npcManager:update(dt, pp)
+    npcManager:update(dt, ppwh)
 end
 
 function love.draw()

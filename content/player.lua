@@ -15,6 +15,8 @@ function Player.new(x, y, assetPath)
     self.x = x or 0
     self.y = y or 0
     self.speed = 133
+    self.width = 32
+    self.height = 32
 
     -- currencies
     self.account = {

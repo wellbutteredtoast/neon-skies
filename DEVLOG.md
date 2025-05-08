@@ -46,3 +46,36 @@ Well that was not very eventful, I'll try do some more work tomorrow after my le
 ### 7 May, 2025
 
 12:05am for me, doing a small little thing before I go to bed, wake up, then go sliding into my lectures. 10 minutes later and I've re-written the NPC system to make it borderline drag-and-drop. Now an entire blank NPC can be slipped into the game via a single JSON file. For now, it's basic, but I will be extending this far and wide. The original `npc.lua` implementation will of course still be found in past commits, but for now this system is a lot better, at least in my opinion.
+
+I accidentally broke everything by attempting to add NPC collisions with the player, currently fixing it, it'll take a little bit however. Currently 2:10pm - most of my day has been taken up by uni, only some coding today, probably some more later today.
+
+**5 hours later and I realized it was because in `checkCollisions` it checks for `width` and `height`, not `w` and `h`.** What a day, but hey the code runs and it *didn't work* because why would it. Let me just explode really quick and figure this out. My theory is that `checkCollisions` is *always* returning false - or not even a boolean value. Turns out it was just reassigning `isColliding` before checking the value it just overwrote, rookie mistake. But now Love2D full-on **SEGFAULTS** shortly after collision. So this just got really weird... progress at least. Or maybe that's a one-off thing, it appears fine after testing, but the NPC doesn't *un-stick* itself, that should be a quick fix.
+
+It was not a quick fix, it's almost midnight and I realized that putting per-instance code in the manager was probably a bad idea, I shipped the code into the `npc.lua` script and it works completely fine.
+
+```lua
+function Nonplayer:update(dt, playerPos)
+
+    if checkCollision(self, playerPos) then
+        self.isColliding = true
+    end
+
+    if not allowedTypes[self.type] or self.type == "static" then return end
+    
+    if self.isColliding then
+        -- left blank intentionally
+    else
+        if self.type == "chasep" then
+            pathToPlayerPerfect(self, playerPos)
+        elseif self.type == "chasev" then
+            pathToPlayerVariance(self, playerPos, 0.5)
+        elseif self.type == "wander" then
+            wanderRandom(self)
+        end
+    end
+
+    self.isColliding = false
+end
+```
+
+And that's the function, it front-loads collision, before even checking the NPC type check, which can probably be removed by now, but that's for the me of tomorrow to find out. That's all for today, I'm gonna go get some well deserved sleep.
