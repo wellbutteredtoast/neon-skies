@@ -93,3 +93,11 @@ The fix worked and it only took like 40 minutes! That's a huge relief, now I can
 And the first system of the day is a validator for mods. It checks for bad function calls and general shenanigans, the usual things and suspects. It'll be worked on and expanded as the game expands as well. Now that this mess is concluded and safely contained, I'm finally gonna start working on *items!* I suspect this'll take a little bit to get right, since I now need to create some added subsystems like an inventory, and an inventory manager for merchants, loot chests, and other places where one can gain items. Adding a GUI-based inventory is not my top priority, making a functional one is. Once I know the functions like `addItem()`, `popItem()`, `queryInventory()`, `checkRemainingSpace()`, etc.. are all functional, then a GUI system will be built on top of everything.
 
 The amount of files in `content` is growing fairly well, I may do some sorting later to compartmentalize™ the game code for better readability at the end of the day. But for now, I plan on just implementing what I need to before the great organization begins.
+
+## 9 May, 2025
+
+No changes today, busy with university.
+
+## 10 May, 2025
+
+No changes today, plans with family. Video log will be compiled together and released sometime on Monday or Tuesday!

@@ -71,3 +71,11 @@
 - Changed `info()` logs to `debug()` logs in `npcManager.lua`
 - Added `inventory.lua`
 - Added `inventoryManager.lua`
+
+## May 9, 2025
+
+- No updates
+
+## May 10, 2025
+
+- No updates
